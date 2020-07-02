@@ -11,6 +11,10 @@ public class Contact extends Person {
         setEmail(email);
     }
 
+
+
+    //RETRIEVE INFO
+
     public String contactInfo(){
         String retval = "";
 
@@ -20,11 +24,6 @@ public class Contact extends Person {
 
         return retval;
     }
-
-
-
-
-
 
 
 }

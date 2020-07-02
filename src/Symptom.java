@@ -27,6 +27,11 @@ public class Symptom {
         this.symptomDays = symptomDays;
     }
 
+
+
+
+    //RETRIEVE INFO
+
     public String symptomNameAndDays(){
 
         return getSymptomName() + " for " + getSymptomDays() + " days ";

@@ -20,6 +20,8 @@ public class Patient extends Person {
     }
 
 
+    //INTERACT WITH ARRAYS
+
     public void addSymptom(Symptom s){
         this.symptoms.add(s);
     }
@@ -29,6 +31,8 @@ public class Patient extends Person {
     }
 
 
+
+    //RETRIEVE INFO
 
     public String patientInfo(){
         String retval = "";

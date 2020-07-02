@@ -9,7 +9,7 @@ public class PatientApp {
         Patient patientObj = null;
 
         System.out.println("Contact Tracing Program");
-        System.out.println("Enter a newly infected person's information?");
+        System.out.println("Enter a newly infected person's information:");
 
         System.out.println("What is the patient name?");
         String patientName = input.nextLine();
@@ -17,7 +17,7 @@ public class PatientApp {
         System.out.println("What is the patient phone number?");
         String phoneNumber = input.nextLine();
 
-        System.out.println("What is the the patient email address");
+        System.out.println("What is the the patient email address?");
         String email = input.nextLine();
 
         System.out.println("What city does the patient live in?");
@@ -28,17 +28,10 @@ public class PatientApp {
 
         patientObj = new Patient(patientName, phoneNumber, city, state, email);
 
-        //prints patient info
-        System.out.println(patientObj.patientInfo());
 
 
-
-        /*
-        Fever, Cough, Shortness of breath or difficulty breathing, tiredness, aches,
-                chills, sore throat, loss of smell, loss of taste,
-        headache, diarrhea, severe vomiting;
-         */
-
+//        //prints patient info                                                                    //CHECK PATIENT INFO
+//        System.out.println(patientObj.patientInfo());
 
 //                                              ADDING SYMPTOMS
 
@@ -58,8 +51,6 @@ public class PatientApp {
 
             System.out.println("How many days?");
             int symptomDays = Integer.valueOf(input.nextLine());
-            //if userInput not a number repeat
-
 
             switch (userSymptom){
                 case("1"):
@@ -118,20 +109,21 @@ public class PatientApp {
 
         }//END ADD SYMPTOM
 
-        //prints symptoms for x days
-        for (Symptom symptom : patientObj.symptoms){
-            System.out.println(symptom.symptomNameAndDays());
-        }
-//        System.out.println(patientObj.symptoms.get(0).symptomNameAndDays());
+
+//        //prints symptoms for x days
+//        for (Symptom symptom : patientObj.symptoms){
+//            System.out.println(symptom.symptomNameAndDays());
+//        }
+//        System.out.println(patientObj.symptoms.get(0).symptomNameAndDays());                          //CHECK SYMPTOMS
 
 
 //                                              GETTING CONTACT INFO
 
-        System.out.println("Has the patient come into contact with any persons? (y/n)");
+        System.out.println("Has the patient come into contact with any persons? (yes / no)");
         String userAnswer = input.nextLine();
 
 
-        while (true) {
+        while (!userAnswer.equalsIgnoreCase("no")) {
 
             Contact contactObj = null;
             System.out.println("What is the contact's name?");
@@ -147,7 +139,7 @@ public class PatientApp {
             contactObj = new Contact(contactName, contactNum, contactEmail);    //create contact
             patientObj.addContact(contactObj);
 
-            System.out.println("Has the patient come in contact with anyone else? (No when done)");
+            System.out.println("Has the patient come in contact with anyone else? (yes / no)");
             userAnswer = input.nextLine();
 
             if (userAnswer.equalsIgnoreCase("n")|| userAnswer.equalsIgnoreCase("no")){
@@ -156,47 +148,35 @@ public class PatientApp {
 
         }
 
-        //prints all patient contacts
-        System.out.println("** \t\tContacts:");
-        for(Contact contact : patientObj.contacts){
-            System.out.println(contact.contactInfo()+"\n\n");
-        }
+//        //prints all patient contacts                                                                 //CHECK CONTACTS
+//        System.out.println("** \t\tContacts:");
+//        for(Contact contact : patientObj.contacts){
+//            System.out.println(contact.contactInfo()+"\n\n");
+//        }
 //        System.out.println(patientObj.contacts.get(0).contactInfo());
 
 
 
+        //              PRINT ALL INFO TOGETHER
 
+        System.out.println("***** Contact Tracing Report *****");
 
+        System.out.println(patientObj.patientInfo());
 
+        System.out.println("** \t\tSymptoms:");
 
+        for (Symptom symptom : patientObj.symptoms){
+            System.out.println(symptom.symptomNameAndDays());
+        }
 
+        System.out.println("\n");
 
+        System.out.println("** \t\tContacts:");
+        for(Contact contact : patientObj.contacts){
+            System.out.println(contact.contactInfo()+"\n\n");
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("Application Finished");
 
 
 
