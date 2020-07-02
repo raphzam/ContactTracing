@@ -2,6 +2,15 @@
 
 This program prompts an incoming patient for their contact information, symptoms, and people they have come in contact with.
 
+#VersionHistory
+
+    PatientAppV2
+    modified to ask user about each symptom
+
+
+    PatientApp
+    original submission
+    showed menu of symptoms prompting user to add until done
 
 
 
