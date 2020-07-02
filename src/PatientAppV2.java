@@ -153,7 +153,7 @@ public class PatientAppV2 {
             System.out.println("Has the patient come into contact with any persons? (yes / no)");
             userAnswer = input.nextLine();
 
-            while (!userAnswer.equalsIgnoreCase("no")) {
+            while (userAnswer.equalsIgnoreCase("yes")||userAnswer.equalsIgnoreCase("y")) {
 
                 Contact contactObj = null;
                 System.out.println("What is the contact's name?");

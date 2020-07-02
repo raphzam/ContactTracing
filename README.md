@@ -5,6 +5,7 @@ This program prompts an incoming patient for their contact information, symptoms
 #VersionHistory
 
     PatientAppV2
+    fixed bug where user is prompted for contacted persons despite saying no contact history
     modified to ask user about each symptom
     modified to add multiple patients to one report
     
