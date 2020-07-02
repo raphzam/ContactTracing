@@ -12,7 +12,6 @@ public class Contact extends Person {
     }
 
 
-
     //RETRIEVE INFO
 
     public String contactInfo(){
@@ -24,6 +23,5 @@ public class Contact extends Person {
 
         return retval;
     }
-
 
 }

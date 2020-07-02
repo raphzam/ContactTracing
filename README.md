@@ -5,6 +5,7 @@ This program prompts an incoming patient for their contact information, symptoms
 #VersionHistory
 
     PatientAppV3 (beta)
+    patient symptoms are now logged with an enhanced for loop
     added iterable symptom database so new symptoms could be added
 
     PatientAppV2

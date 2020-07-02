@@ -70,5 +70,4 @@ public class SymptomDatabase implements Iterable<Symptom> {
 //        return allCovidSymptoms.iterator();
 //    }
 
-
 }

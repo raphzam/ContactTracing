@@ -45,20 +45,6 @@ public class Patient extends Person {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public String symptomInfo(){    //returns symptom portion
         String retval = "";
         /* traverse arrayList of 'symptoms'
@@ -72,7 +58,6 @@ public class Patient extends Person {
         return retval;
     }
 
-
     public String contactInfo(){    //returns contact info portion
         String retval = "";
         /* traverse arrayList of 'contacts'
@@ -84,7 +69,6 @@ public class Patient extends Person {
 
             return retval
          */
-
         return retval;
     }
 
