@@ -6,6 +6,8 @@ This program prompts an incoming patient for their contact information, symptoms
 
     PatientAppV2
     modified to ask user about each symptom
+    modified to add multiple patients to one report
+    
 
 
     PatientApp
