@@ -6,10 +6,16 @@ public class Symptom {
 
     }
 
+    public Symptom(String symptomName){
+        this.symptomName = symptomName;
+    }
+
     public Symptom(String symptomName, int symptomDays){
         this.symptomName = symptomName;
         this.symptomDays = symptomDays;
     }
+
+
 
     public String getSymptomName() {
         return symptomName;
