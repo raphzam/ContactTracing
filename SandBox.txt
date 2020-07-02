@@ -1,3 +1,5 @@
+//V2 with debug statements
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,8 +31,11 @@ public class PatientAppV2 {
             System.out.println("What state does the patient live in?");
             String state = input.nextLine();
 
-            patientObj = new Patient(patientName, phoneNumber, city, state, email); //creating a new Patient object
+            patientObj = new Patient(patientName, phoneNumber, city, state, email);
 
+
+//        //prints patient info                                                                    //CHECK PATIENT INFO
+//        System.out.println(patientObj.patientInfo());
 
 //                                              ADDING SYMPTOMS
             String userAnswer = "";
@@ -42,8 +47,8 @@ public class PatientAppV2 {
             if (userAnswer.equalsIgnoreCase("y") || userAnswer.equalsIgnoreCase("yes")) {
                 System.out.println("How many days?");
                 symptomDays = Integer.valueOf(input.nextLine());
-                Symptom fever = new Symptom("Fever", symptomDays);              //creating new Symptom object
-                patientObj.addSymptom(fever);                                               //adding symptom to arraylist
+                Symptom fever = new Symptom("Fever", symptomDays);
+                patientObj.addSymptom(fever);
             }
 
             System.out.println("Does " + patientName + " have any symptoms for cough?");
@@ -144,7 +149,14 @@ public class PatientAppV2 {
                 Symptom vomiting = new Symptom("Severe vomiting", symptomDays);
                 patientObj.addSymptom(vomiting);
             }
+
             //END ADD SYMPTOMS
+//
+//            //prints symptoms for x days
+//            for (Symptom symptom : patientObj.symptoms) {
+//                System.out.println(symptom.symptomNameAndDays());
+//            }
+//            System.out.println(patientObj.symptoms.get(0).symptomNameAndDays());                          //CHECK SYMPTOMS
 
 
 //                                              GETTING CONTACT INFO
@@ -152,6 +164,7 @@ public class PatientAppV2 {
             userAnswer = "";
             System.out.println("Has the patient come into contact with any persons? (yes / no)");
             userAnswer = input.nextLine();
+
 
             while (!userAnswer.equalsIgnoreCase("no")) {
 
@@ -178,13 +191,16 @@ public class PatientAppV2 {
 
             }//END ADD CONTACT
 
-            //patient creation is complete at this point
-            patientArrayList.add(patientObj);   //add Patient to patient array list
+//        //prints all patient contacts                                                                 //CHECK CONTACTS
+//        System.out.println("** \t\tContacts:");
+//        for(Contact contact : patientObj.contacts){
+//            System.out.println(contact.contactInfo()+"\n\n");
+//        }
+//        System.out.println(patientObj.contacts.get(0).contactInfo());
 
-
-//                                                ADD ANOTHER PATIENT?
 
             userAnswer = "";
+            patientArrayList.add(patientObj);
             System.out.println("Add another patient?");
             userAnswer = input.nextLine();
             if (userAnswer.equalsIgnoreCase("n") || userAnswer.equalsIgnoreCase("no")) {
@@ -192,29 +208,31 @@ public class PatientAppV2 {
             }
         }//END ADD PATIENT
 
-//                                                    DISPLAYING OUTPUT
+
+        //              PRINT ALL INFO TOGETHER
+
+            System.out.println("***** Contact Tracing Report *****");
 
 
-
-        System.out.println("***** Contact Tracing Report *****");           //report header
-
-        for (Patient patient : patientArrayList) {                          //loop through Patients in patient arraylist
+        for (Patient patient : patientArrayList) {
             //LOOP THIS
             System.out.println("** \t\tPatient Info:");
             System.out.println(patient.patientInfo());
             System.out.println("** \t\tSymptoms:");
-            for (Symptom symptom : patient.symptoms) {                      //loop through patientobj symptoms arraylist
+            for (Symptom symptom : patient.symptoms) {
                 System.out.println(symptom.symptomNameAndDays());
             }
             System.out.println("\n");
             System.out.println("** \t\tContacts:");
-            for (Contact contact : patient.contacts) {                      //loop through patient obj contacts arraylist
+            for (Contact contact : patient.contacts) {
                 System.out.println(contact.contactInfo() + "\n\n");
             }
             System.out.println("\t\t---------");
         }//END PRINT PATIENT
 
+
         System.out.println("Application Finished");
+
 
         }//END MAIN
 
